@@ -26,6 +26,21 @@ $brown: #a69069;
 .wr{
   @extend %wr;
 }
+.btn{
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid $brown;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 700;
+  //text-transform: uppercase;
+  padding: 15px 45px;
+  transition: all 0.3s ease;
+
+  &:hover{
+    background: $brown;
+  }
+}
 
 html, body{
   margin: 0;
@@ -38,6 +53,12 @@ html, body{
 header{
   min-height: 100vh;
   position: relative;
+  /*display: flex;
+  //align-items: center;
+  flex-wrap: wrap;*/
+  display: grid;
+  grid-template-rows:45vh auto;
+
 
   .head-slider{
     @extend %ul;
@@ -51,62 +72,82 @@ header{
       filter: brightness(65%);
     }
   }
-  .logo-cont{
+  .row{
     position: relative;
-    text-align: center;
-    padding: 50px 0 37px;
 
-    a{
-      display: inline-block;
-      text-decoration: none;
+    &.row-1{
+      .logo-cont{
+        position: relative;
+        text-align: center;
+        padding: 50px 0 37px;
 
-      div{
-        &:first-of-type{
-          font-family: map_get($fonts, 'dancing');
-          font-size: 45px;
-          font-weight: 700;
-          line-height: 0.9;
+        a{
+          display: inline-block;
+          text-decoration: none;
 
-          span{
+          div{
             &:first-of-type{
-              color: white;
+              font-family: map_get($fonts, 'dancing');
+              font-size: 45px;
+              font-weight: 700;
+              line-height: 0.9;
+
+              span{
+                &:first-of-type{
+                  color: white;
+                }
+                &:last-of-type{
+                  color: $brown;
+                }
+              }
             }
             &:last-of-type{
-              color: $brown;
+              font-family: map_get($fonts, 'oxygen');
+              color: #acacac;
+              font-size: 9px;
+              font-weight: 400;
+              text-transform: uppercase;
+              text-align: left;
+              letter-spacing: 4px;
             }
           }
         }
-        &:last-of-type{
-          font-family: map_get($fonts, 'oxygen');
-          color: #acacac;
-          font-size: 9px;
-          font-weight: 400;
-          text-transform: uppercase;
-          text-align: left;
-          letter-spacing: 4px;
+      }
+      ul.menu{
+        @extend %ul, %wr;
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        li{
+          padding: 0 20.5px;
+          a{
+            display: inline-block;
+            color: white;
+            font-weight: 700;
+            text-decoration: none;
+            border-bottom: 3px solid transparent;
+            padding-bottom: 2px;
+
+            &:hover, &.active{
+              border-color: $brown;
+            }
+          }
         }
+
       }
     }
-  }
-  ul.menu{
-    @extend %ul, %wr;
-    position: relative;
-    display: flex;
-    justify-content: center;
+    &.row-2{
+      text-align: center;
 
-    li{
-      padding: 0 20.5px;
-      a{
-        display: inline-block;
+      .big-title{
         color: white;
-        font-weight: 700;
-        text-decoration: none;
-        border-bottom: 3px solid transparent;
-        padding-bottom: 2px;
-
-        &:hover, &.active{
-          border-color: $brown;
-        }
+        font-family: map_get($fonts, 'rufina');
+        font-size: 60px;
+        font-weight: 400;
+      }
+      .btn{
+        color: white;
       }
     }
 

@@ -1,12 +1,24 @@
 @import url("https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Oxygen:400,700|Raleway:400,700,900|Rufina:400,700");
-header .head-slider, header ul.menu {
+header .head-slider, header .row.row-1 ul.menu {
   list-style: none;
   margin: 0;
   padding: 0; }
 
-.wr, header ul.menu {
+.wr, header .row.row-1 ul.menu {
   max-width: 1170px;
   margin: 0 auto; }
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid #a69069;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 15px 45px;
+  transition: all 0.3s ease; }
+  .btn:hover {
+    background: #a69069; }
 
 html, body {
   margin: 0;
@@ -18,7 +30,12 @@ html, body {
 
 header {
   min-height: 100vh;
-  position: relative; }
+  position: relative;
+  /*display: flex;
+  //align-items: center;
+  flex-wrap: wrap;*/
+  display: grid;
+  grid-template-rows: 45vh auto; }
   header .head-slider {
     position: absolute;
     width: 100%;
@@ -27,44 +44,55 @@ header {
       min-height: 100%;
       background: no-repeat center top / cover;
       filter: brightness(65%); }
-  header .logo-cont {
-    position: relative;
-    text-align: center;
-    padding: 50px 0 37px; }
-    header .logo-cont a {
-      display: inline-block;
-      text-decoration: none; }
-      header .logo-cont a div:first-of-type {
-        font-family: "Dancing Script", cursive;
-        font-size: 45px;
-        font-weight: 700;
-        line-height: 0.9; }
-        header .logo-cont a div:first-of-type span:first-of-type {
-          color: white; }
-        header .logo-cont a div:first-of-type span:last-of-type {
-          color: #a69069; }
-      header .logo-cont a div:last-of-type {
-        font-family: "Oxygen", sans-serif;
-        color: #acacac;
-        font-size: 9px;
-        font-weight: 400;
-        text-transform: uppercase;
-        text-align: left;
-        letter-spacing: 4px; }
-  header ul.menu {
-    position: relative;
-    display: flex;
-    justify-content: center; }
-    header ul.menu li {
-      padding: 0 20.5px; }
-      header ul.menu li a {
+  header .row {
+    position: relative; }
+    header .row.row-1 .logo-cont {
+      position: relative;
+      text-align: center;
+      padding: 50px 0 37px; }
+      header .row.row-1 .logo-cont a {
         display: inline-block;
+        text-decoration: none; }
+        header .row.row-1 .logo-cont a div:first-of-type {
+          font-family: "Dancing Script", cursive;
+          font-size: 45px;
+          font-weight: 700;
+          line-height: 0.9; }
+          header .row.row-1 .logo-cont a div:first-of-type span:first-of-type {
+            color: white; }
+          header .row.row-1 .logo-cont a div:first-of-type span:last-of-type {
+            color: #a69069; }
+        header .row.row-1 .logo-cont a div:last-of-type {
+          font-family: "Oxygen", sans-serif;
+          color: #acacac;
+          font-size: 9px;
+          font-weight: 400;
+          text-transform: uppercase;
+          text-align: left;
+          letter-spacing: 4px; }
+    header .row.row-1 ul.menu {
+      position: relative;
+      display: flex;
+      justify-content: center; }
+      header .row.row-1 ul.menu li {
+        padding: 0 20.5px; }
+        header .row.row-1 ul.menu li a {
+          display: inline-block;
+          color: white;
+          font-weight: 700;
+          text-decoration: none;
+          border-bottom: 3px solid transparent;
+          padding-bottom: 2px; }
+          header .row.row-1 ul.menu li a:hover, header .row.row-1 ul.menu li a.active {
+            border-color: #a69069; }
+    header .row.row-2 {
+      text-align: center; }
+      header .row.row-2 .big-title {
         color: white;
-        font-weight: 700;
-        text-decoration: none;
-        border-bottom: 3px solid transparent;
-        padding-bottom: 2px; }
-        header ul.menu li a:hover, header ul.menu li a.active {
-          border-color: #a69069; }
+        font-family: "Rufina", serif;
+        font-size: 60px;
+        font-weight: 400; }
+      header .row.row-2 .btn {
+        color: white; }
 
 /*# sourceMappingURL=style.css.map */
