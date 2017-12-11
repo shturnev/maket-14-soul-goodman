@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Oxygen:400,700|Raleway:400,700,900|Rufina:400,700");
-header .head-slider, header .row.row-1 ul.menu {
+header .head-slider, header .row.row-1 ul.menu, #services > .wr .row-2 {
   list-style: none;
   margin: 0;
   padding: 0; }
@@ -18,7 +18,8 @@ header .head-slider, header .row.row-1 ul.menu {
   padding: 15px 45px;
   transition: all 0.3s ease; }
   .btn:hover {
-    background: #a69069; }
+    background: #a69069;
+    color: white; }
 
 html, body {
   margin: 0;
@@ -26,7 +27,8 @@ html, body {
   height: 100%;
   min-height: 100%;
   font-size: 14px;
-  font-family: "Oxygen", sans-serif; }
+  font-family: "Oxygen", sans-serif;
+  color: #333; }
 
 header {
   min-height: 100vh;
@@ -149,6 +151,48 @@ header {
         color: #a69069;
         border-color: #a69069;
         opacity: 1; }
+
+#services {
+  position: relative;
+  padding: 85px 0; }
+  #services > .wr > .row-1 {
+    display: grid;
+    grid-template-columns: minmax(300px, 530px) auto;
+    justify-content: space-between; }
+    #services > .wr > .row-1 .col-1 {
+      color: #333;
+      font-family: "Rufina", serif;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 35px; }
+    #services > .wr > .row-1 .btn {
+      color: #484848;
+      font-size: 14px; }
+      #services > .wr > .row-1 .btn:hover {
+        color: white; }
+  #services > .wr .row-2 {
+    margin-top: 73px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px 32px; }
+    #services > .wr .row-2 li {
+      display: grid;
+      grid-template-columns: 70px auto;
+      grid-gap: 30px; }
+      #services > .wr .row-2 li .for-content .title {
+        color: #333;
+        font-family: "Rufina", serif;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 10px; }
+      #services > .wr .row-2 li .for-content .text {
+        color: #555;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 20px;
+        height: 56px;
+        overflow: hidden; }
 
 @keyframes for-line {
   from {

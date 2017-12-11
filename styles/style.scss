@@ -39,6 +39,7 @@ $brown: #a69069;
 
   &:hover{
     background: $brown;
+    color: white;
   }
 }
 
@@ -49,6 +50,7 @@ html, body{
   min-height: 100%;
   font-size: 14px;
   font-family: map_get($fonts, 'oxygen');
+  color:#333;
 }
 header{
   min-height: 100vh;
@@ -220,7 +222,66 @@ header{
     }
   }
 }
+#services{
+  position: relative;
+  padding: 85px 0;
 
+  &>.wr{
+    &>.row-1{
+      display: grid;
+      grid-template-columns:  minmax(300px, 530px) auto;
+      justify-content: space-between;
+
+      .col-1{
+        color: #333;
+        font-family: map_get($fonts, 'rufina');
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 35px;
+      }
+      .btn{
+        color: #484848;
+        font-size: 14px;
+        &:hover{
+          color: white;
+        }
+      }
+
+    }
+    .row-2{
+      @extend %ul;
+      margin-top: 73px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 30px 32px;
+
+      li{
+        display: grid;
+        grid-template-columns: 70px auto;
+        grid-gap: 30px;
+
+        .for-content{
+          .title{
+            color: #333;
+            font-family: map_get($fonts, 'rufina');
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 10px;
+          }
+          .text{
+            color: #555;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 20px;
+            height: 56px;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+}
 
 
 //animations
