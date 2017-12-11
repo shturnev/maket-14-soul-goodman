@@ -529,6 +529,78 @@ header{
     }
   }
 }
+#testimonials{
+  background: #4a5b74;
+  padding: 65px 0;
+
+  ul{
+    @extend %ul;
+    max-width: 945px;
+    margin: 0 auto;
+    text-align: center;
+
+    li{
+      .text{
+        &:before{
+          content: '';
+          display: block;
+          width: 30px;
+          height: 22px;
+          background: url('../img/qoutes.png') no-repeat;
+          margin: 0 auto 40px;
+        }
+
+        color: white;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+      }
+      .stars{
+        display: flex;
+        justify-content: center;
+        margin-top: 35px;
+        font-size: 16px;
+        color: $brown;
+        margin-bottom: 40px;
+
+        .no{
+          color:#828e9e;
+        }
+      }
+      .photo{
+        width: 83px;
+        height: 83px;
+        background: no-repeat center / cover;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+
+      }
+      .name{
+        font-family: map_get($fonts, 'rufina');
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1;
+        color: white;
+      }
+      .speciality{
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 18px;
+        color: white;
+      }
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
 
 //animations
 @keyframes for-line {
