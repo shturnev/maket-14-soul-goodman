@@ -86,13 +86,74 @@ header {
           header .row.row-1 ul.menu li a:hover, header .row.row-1 ul.menu li a.active {
             border-color: #a69069; }
     header .row.row-2 {
-      text-align: center; }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 50px; }
       header .row.row-2 .big-title {
         color: white;
         font-family: "Rufina", serif;
         font-size: 60px;
         font-weight: 400; }
       header .row.row-2 .btn {
-        color: white; }
+        color: white;
+        margin-top: 42px; }
+      header .row.row-2 .line {
+        position: relative;
+        width: 2px;
+        flex: 1;
+        opacity: 0.15;
+        margin: 42px 0 35px 0;
+        overflow: hidden; }
+        header .row.row-2 .line:before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          background: white;
+          animation: for-line 2s ease-out infinite; }
+      header .row.row-2 .mouse {
+        width: 22px;
+        height: 32px;
+        background-image: url("../img/mouse.png");
+        cursor: pointer; }
+  header .slide-dots {
+    position: absolute;
+    height: 100%;
+    right: 35px;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    header .slide-dots span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 0;
+      width: 30px;
+      height: 30px;
+      border: 2px solid white;
+      border-radius: 50%;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 5px;
+      opacity: 0.8; }
+      header .slide-dots span:last-of-type {
+        margin-bottom: 0; }
+      header .slide-dots span:hover {
+        color: #a69069;
+        border-color: #a69069;
+        opacity: 1; }
+
+@keyframes for-line {
+  from {
+    top: -100%; }
+  to {
+    top: 100%; } }
 
 /*# sourceMappingURL=style.css.map */
