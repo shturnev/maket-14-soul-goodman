@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Oxygen:400,700|Raleway:400,700,900|Rufina:400,700");
-header .head-slider, header .row.row-1 ul.menu, #services > .wr .row-2 {
+header .head-slider, header .row.row-1 ul.menu, #services > .wr .row-2, #achivements > .wr ul {
   list-style: none;
   margin: 0;
   padding: 0; }
@@ -194,7 +194,7 @@ header {
         font-size: 13px;
         font-weight: 400;
         line-height: 20px;
-        height: 56px;
+        height: 60px;
         overflow: hidden; }
 
 #about {
@@ -255,6 +255,44 @@ header {
           margin-left: 20px; }
         #about .col-2 .content .play:hover {
           opacity: 1; }
+
+#achivements {
+  padding: 90px 0; }
+  #achivements > .wr {
+    box-sizing: border-box;
+    border: 5px solid #a69069;
+    position: relative; }
+    #achivements > .wr > .for-title {
+      position: absolute;
+      top: -27px;
+      left: 0;
+      right: 0;
+      text-align: center; }
+      #achivements > .wr > .for-title span {
+        display: inline-block;
+        background: white;
+        font-family: "Rufina", serif;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 40px;
+        padding: 5px 30px; }
+    #achivements > .wr ul {
+      margin: 40px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around; }
+      #achivements > .wr ul li {
+        margin: 10px; }
+        #achivements > .wr ul li .num {
+          color: #a69069;
+          font-size: 60px;
+          font-weight: 700;
+          line-height: 1; }
+        #achivements > .wr ul li .desc {
+          color: #444;
+          font-family: "Rufina", serif;
+          font-size: 16px;
+          font-weight: 700; }
 
 @keyframes for-line {
   from {
