@@ -1,6 +1,6 @@
 @import url("https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?u8vidh");
 @import url("https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Oxygen:400,700|Raleway:400,700,900|Rufina:400,700");
-header .head-slider, header .row.row-1 ul.menu, #services > .wr .row-2, #achivements > .wr ul, #practice-area > .wr ul, #testimonials ul, #attorneys > .wr > .team-list, #pricing > .wr > .price-list {
+header .head-slider, header .row.row-1 ul.menu, #services > .wr .row-2, #achivements > .wr ul, #practice-area > .wr ul, #testimonials ul, #attorneys > .wr > .team-list, #pricing > .wr > .price-list, #news ul {
   list-style: none;
   margin: 0;
   padding: 0; }
@@ -9,7 +9,7 @@ header .head-slider, header .row.row-1 ul.menu, #services > .wr .row-2, #achivem
   max-width: 1170px;
   margin: 0 auto; }
 
-.btn {
+.btn, footer > .wr .col-1 .submit input {
   display: inline-block;
   text-decoration: none;
   border: 2px solid #a69069;
@@ -18,7 +18,7 @@ header .head-slider, header .row.row-1 ul.menu, #services > .wr .row-2, #achivem
   font-weight: 700;
   padding: 15px 45px;
   transition: all 0.3s ease; }
-  .btn:hover {
+  .btn:hover, footer > .wr .col-1 .submit input:hover {
     background: #a69069;
     color: white; }
 
@@ -102,7 +102,7 @@ header {
         font-family: "Rufina", serif;
         font-size: 60px;
         font-weight: 400; }
-      header .row.row-2 .btn {
+      header .row.row-2 .btn, header .row.row-2 footer > .wr .col-1 .submit input, footer > .wr .col-1 .submit header .row.row-2 input {
         color: white;
         margin-top: 42px; }
       header .row.row-2 .line {
@@ -169,10 +169,10 @@ header {
       font-size: 30px;
       font-weight: 700;
       line-height: 35px; }
-    #services > .wr > .row-1 .btn {
+    #services > .wr > .row-1 .btn, #services > .wr > .row-1 footer > .wr .col-1 .submit input, footer > .wr .col-1 .submit #services > .wr > .row-1 input {
       color: #484848;
       font-size: 14px; }
-      #services > .wr > .row-1 .btn:hover {
+      #services > .wr > .row-1 .btn:hover, #services > .wr > .row-1 footer > .wr .col-1 .submit input:hover, footer > .wr .col-1 .submit #services > .wr > .row-1 input:hover {
         color: white; }
   #services > .wr .row-2 {
     margin-top: 73px;
@@ -224,10 +224,10 @@ header {
       color: white;
       font-size: 13px;
       line-height: 20px; }
-    #about .col-1 .btn {
+    #about .col-1 .btn, #about footer > .wr .col-1 .submit input, footer > .wr #about .col-1 .submit input {
       border-color: white;
       color: white; }
-      #about .col-1 .btn:hover {
+      #about .col-1 .btn:hover, #about footer > .wr .col-1 .submit input:hover, footer > .wr #about .col-1 .submit input:hover {
         background: white;
         color: #a69069; }
   #about .col-2 {
@@ -316,10 +316,10 @@ header {
       font-size: 15px;
       font-weight: 400;
       line-height: 23px; }
-    #practice-area > .wr > .row-1 .btn {
+    #practice-area > .wr > .row-1 .btn, #practice-area > .wr > .row-1 footer > .wr .col-1 .submit input, footer > .wr .col-1 .submit #practice-area > .wr > .row-1 input {
       font-size: 14px;
       color: #444; }
-      #practice-area > .wr > .row-1 .btn:hover {
+      #practice-area > .wr > .row-1 .btn:hover, #practice-area > .wr > .row-1 footer > .wr .col-1 .submit input:hover, footer > .wr .col-1 .submit #practice-area > .wr > .row-1 input:hover {
         color: white; }
   #practice-area > .wr ul {
     margin-top: 40px;
@@ -541,6 +541,7 @@ header {
     #pricing > .wr > .price-list {
       margin-top: 45px;
       display: grid;
+      grid-gap: 30px;
       grid-template-columns: repeat(3, 1fr);
       align-items: center; }
       #pricing > .wr > .price-list li {
@@ -548,12 +549,19 @@ header {
         min-height: 516px;
         border: 6px solid #44474b;
         box-sizing: border-box;
-        overflow: hidden; }
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 35px; }
         #pricing > .wr > .price-list li .sale-percent {
           display: flex;
           justify-content: center;
           align-items: flex-end;
           position: absolute;
+          top: 0;
+          left: 0;
           width: 100px;
           height: 73px;
           background-color: #454749;
@@ -563,6 +571,296 @@ header {
           font-weight: 700;
           line-height: 41px;
           color: white; }
+        #pricing > .wr > .price-list li .price-row {
+          margin-bottom: 50px; }
+          #pricing > .wr > .price-list li .price-row:after {
+            content: '/ PER MONTH';
+            display: block;
+            color: #9b9b9b;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 18px;
+            margin-top: 10px; }
+          #pricing > .wr > .price-list li .price-row .old {
+            color: #44474b;
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 25px;
+            text-decoration: line-through; }
+          #pricing > .wr > .price-list li .price-row .new {
+            color: #c1aa81;
+            font-size: 80px;
+            font-weight: 700;
+            line-height: 25px; }
+            #pricing > .wr > .price-list li .price-row .new sup {
+              font-size: 46px; }
+        #pricing > .wr > .price-list li .title {
+          color: #444;
+          font-family: "Rufina", serif;
+          font-size: 25px;
+          font-weight: 700;
+          line-height: 40px;
+          margin-bottom: 35px; }
+        #pricing > .wr > .price-list li .descr {
+          color: #555;
+          font-size: 13px;
+          font-weight: 400;
+          line-height: 20px;
+          max-height: 80px;
+          overflow: hidden;
+          margin-bottom: 36px; }
+        #pricing > .wr > .price-list li .btn, #pricing > .wr > .price-list li footer > .wr .col-1 .submit input, footer > .wr .col-1 .submit #pricing > .wr > .price-list li input {
+          color: #484848;
+          font-size: 14px; }
+          #pricing > .wr > .price-list li .btn:hover, #pricing > .wr > .price-list li footer > .wr .col-1 .submit input:hover, footer > .wr .col-1 .submit #pricing > .wr > .price-list li input:hover {
+            color: white; }
+        #pricing > .wr > .price-list li.active {
+          min-height: 566px;
+          border-color: #a69069; }
+          #pricing > .wr > .price-list li.active .sale-percent {
+            background-color: #a69069; }
+
+#solutions {
+  position: relative; }
+  #solutions .tabs-cont {
+    background: #4a5b74; }
+    #solutions .tabs-cont .tab-item {
+      text-align: center;
+      display: none;
+      padding: 85px 0; }
+      #solutions .tabs-cont .tab-item.active {
+        display: block; }
+      #solutions .tabs-cont .tab-item .title {
+        color: white;
+        font-family: "Rufina", serif;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 40px; }
+      #solutions .tabs-cont .tab-item .text {
+        max-width: 951px;
+        margin: 35px auto 0;
+        color: white;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px; }
+  #solutions .etabs {
+    background: #374457;
+    padding-bottom: 10px; }
+    #solutions .etabs > .wr {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center; }
+      #solutions .etabs > .wr a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        min-height: 170px;
+        color: white;
+        font-family: "Rufina", serif;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 20px;
+        text-decoration: none; }
+        #solutions .etabs > .wr a .icon {
+          opacity: 0;
+          position: absolute;
+          top: 0; }
+        #solutions .etabs > .wr a.active {
+          background-color: #4a5b74; }
+          #solutions .etabs > .wr a.active .icon {
+            opacity: 1; }
+
+#news {
+  padding: 100px 0; }
+  #news h2 {
+    font-family: "Rufina", serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+    text-align: center; }
+  #news .h-descr {
+    max-width: 554px;
+    margin: 0 auto;
+    color: #9b9b9b;
+    font-family: "Rufina", serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center; }
+  #news ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin-top: 40px; }
+    #news ul li {
+      position: relative; }
+      #news ul li .photo {
+        display: block;
+        position: relative;
+        text-decoration: none;
+        padding-top: 61.01266%;
+        background: no-repeat center / cover; }
+        #news ul li .photo svg {
+          opacity: 0;
+          position: absolute;
+          width: 48px;
+          height: 56px;
+          fill: #a69069;
+          top: calc(50% - 28px);
+          left: calc(50% - 24px);
+          transition: all 0.3s ease; }
+      #news ul li .date {
+        color: #a69069;
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 18px;
+        margin-top: 10px; }
+      #news ul li .title {
+        display: block;
+        text-decoration: none;
+        color: #444;
+        font-family: "Rufina", serif;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 20px;
+        margin-top: 10px; }
+        #news ul li .title:hover {
+          color: #a69069; }
+      #news ul li .info-row {
+        display: flex;
+        color: #bdbdbd;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 18px;
+        text-transform: uppercase;
+        margin-top: 8px; }
+        #news ul li .info-row svg {
+          fill: #bdbdbd;
+          height: 9px;
+          width: 10px; }
+        #news ul li .info-row > div:first-of-type {
+          margin-right: 15px; }
+      #news ul li .descr {
+        max-height: 60px;
+        color: #555;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 20px;
+        overflow: hidden;
+        margin: 25px 0 30px; }
+      #news ul li .btn, #news ul li footer > .wr .col-1 .submit input, footer > .wr .col-1 .submit #news ul li input {
+        font-size: 14px;
+        color: #484848; }
+        #news ul li .btn:hover, #news ul li footer > .wr .col-1 .submit input:hover, footer > .wr .col-1 .submit #news ul li input:hover {
+          color: white; }
+      #news ul li:hover .photo svg, #news ul li.active .photo svg {
+        opacity: 1; }
+
+#partners {
+  padding-bottom: 30px; }
+  #partners > .wr {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-around; }
+
+footer {
+  background: #3e434a;
+  padding: 70px 0; }
+  footer > .wr {
+    display: grid;
+    grid-template-columns: minmax(300px, 667px) auto;
+    grid-gap: 70px; }
+    footer > .wr .col-1 .title {
+      color: white;
+      font-family: "Rufina", serif;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 40px;
+      margin-bottom: 15px; }
+    footer > .wr .col-1 input[type='text'], footer > .wr .col-1 textarea {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 15px;
+      border: 0;
+      color: white;
+      background: transparent;
+      outline: none; }
+    footer > .wr .col-1 textarea {
+      height: 173px; }
+    footer > .wr .col-1 hr {
+      height: 4px;
+      opacity: 0.5;
+      border: 1px solid white;
+      margin-bottom: 10px; }
+    footer > .wr .col-1 ::-webkit-input-placeholder {
+      color: #d6d6d6;
+      font-family: "Oxygen", sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 18px; }
+    footer > .wr .col-1 .submit {
+      text-align: right;
+      padding-top: 10px; }
+      footer > .wr .col-1 .submit input {
+        background: transparent;
+        color: white;
+        cursor: pointer;
+        padding: 10px 45px; }
+    footer > .wr .col-2 .logo-cont {
+      position: relative;
+      padding: 50px 0 15px; }
+      footer > .wr .col-2 .logo-cont a {
+        display: inline-block;
+        text-decoration: none; }
+        footer > .wr .col-2 .logo-cont a div:first-of-type {
+          font-family: "Dancing Script", cursive;
+          font-size: 45px;
+          font-weight: 700;
+          line-height: 0.9; }
+          footer > .wr .col-2 .logo-cont a div:first-of-type span:first-of-type {
+            color: white; }
+          footer > .wr .col-2 .logo-cont a div:first-of-type span:last-of-type {
+            color: #a69069; }
+        footer > .wr .col-2 .logo-cont a div:last-of-type {
+          font-family: "Oxygen", sans-serif;
+          color: #acacac;
+          font-size: 9px;
+          font-weight: 400;
+          text-transform: uppercase;
+          text-align: left;
+          letter-spacing: 4px; }
+    footer > .wr .col-2 address {
+      color: white;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 20px; }
+    footer > .wr .col-2 .social {
+      display: flex;
+      align-self: flex-end; }
+      footer > .wr .col-2 .social .bottom {
+        align-self: flex-end; }
+      footer > .wr .col-2 .social a {
+        display: block;
+        position: relative;
+        text-decoration: none;
+        font-size: 14px;
+        color: #a69069;
+        margin-right: 15px; }
+        footer > .wr .col-2 .social a.socicon-youtube {
+          transform: translateY(2px); }
+        footer > .wr .col-2 .social a:hover {
+          color: #af9c79; }
+    footer > .wr .col-2 .copy {
+      color: #b3b3b3;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 20px; }
+      footer > .wr .col-2 .copy a {
+        color: #a69069; }
 
 @keyframes for-line {
   from {
