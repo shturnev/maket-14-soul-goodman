@@ -1,6 +1,6 @@
 @import url("https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?u8vidh");
 @import url("https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Oxygen:400,700|Raleway:400,700,900|Rufina:400,700");
-header .head-slider, header .row.row-1 ul.menu, #services > .wr .row-2, #achivements > .wr ul, #practice-area > .wr ul, #testimonials ul, #attorneys > .wr > .team-list {
+header .head-slider, header .row.row-1 ul.menu, #services > .wr .row-2, #achivements > .wr ul, #practice-area > .wr ul, #testimonials ul, #attorneys > .wr > .team-list, #pricing > .wr > .price-list {
   list-style: none;
   margin: 0;
   padding: 0; }
@@ -442,6 +442,7 @@ header {
         #attorneys > .wr > .descr .text p:first-of-type {
           margin-top: 0; }
     #attorneys > .wr > .team-list {
+      margin-top: 20px;
       display: grid;
       grid-gap: 30px;
       grid-template-columns: repeat(3, 1fr); }
@@ -517,6 +518,51 @@ header {
           #attorneys > .wr > .team-list li:hover .content .dop, #attorneys > .wr > .team-list li.active .content .dop {
             display: block;
             animation: from-bottom 0.3s ease-out; }
+
+#pricing {
+  position: relative;
+  padding-bottom: 100px; }
+  #pricing > .wr {
+    text-align: center; }
+    #pricing > .wr > .for-title {
+      font-family: "Rufina", serif;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 40px;
+      margin-bottom: 10px; }
+    #pricing > .wr > .descr {
+      color: #9b9b9b;
+      font-family: "Rufina", serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+      max-width: 580px;
+      margin: 0 auto; }
+    #pricing > .wr > .price-list {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center; }
+      #pricing > .wr > .price-list li {
+        position: relative;
+        min-height: 516px;
+        border: 6px solid #44474b;
+        box-sizing: border-box;
+        overflow: hidden; }
+        #pricing > .wr > .price-list li .sale-percent {
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          position: absolute;
+          width: 100px;
+          height: 73px;
+          background-color: #454749;
+          box-sizing: border-box;
+          transform: rotate(-40deg) translate(-8px, -49px);
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 41px;
+          color: white; }
 
 @keyframes for-line {
   from {
