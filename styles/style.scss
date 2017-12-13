@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 //fonts
+@import url('https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?u8vidh');
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Oxygen:400,700|Raleway:400,700,900|Rufina:400,700');
 $fonts: (
   'oxygen': ('Oxygen', sans-serif),
@@ -592,7 +593,151 @@ header{
   }
 
 }
+#attorneys{
+  position: relative;
 
+  &>.wr{
+    padding: 100px 0;
+
+    &>.for-title{
+      font-family: map_get($fonts, 'rufina');
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 40px;
+      margin-bottom: 10px;
+    }
+    &>.descr{
+      display: flex;
+      align-items: flex-start;
+
+      .logo{
+        margin-right: 20px;
+      }
+      .text{
+        flex: 1;
+        color: #555;
+        font-size: 13px;
+        line-height: 20px;
+
+        p:first-of-type{
+          margin-top: 0;
+        }
+      }
+    }
+    &>.team-list{
+      @extend %ul;
+      display: grid;
+      grid-gap: 30px;
+      grid-template-columns: repeat(3, 1fr);
+
+      li{
+        position: relative;
+
+
+        &:before{
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: #4a4d51;
+        }
+
+        .photo{
+          padding-top: 100%;
+          background: no-repeat center top / cover;
+          filter: brightness(95%);
+          transition: all 0.3s ease;
+        }
+        .content{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          padding: 20px;
+          box-sizing: border-box;
+          overflow: hidden;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          transition: all 0.3s ease;
+
+          .name{
+            text-decoration: none;
+            color: white;
+            font-family: map_get($fonts, 'rufina');
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.3;
+
+            &:hover{
+              color: lighten($brown, 5%);
+            }
+          }
+          .speciality{
+            color: #d9d9d9;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 18px;
+          }
+          .dop{
+            display: none;
+            margin-top: 8px;
+
+             .text{
+               color: #ddd;
+               font-size: 13px;
+               font-weight: 400;
+               line-height: 20px;
+             }
+          }
+          .social{
+            display: flex;
+            align-self: flex-end;
+            margin-top: 15px;
+
+            .bottom{
+              align-self: flex-end;
+            }
+
+            a{
+              display:block;
+              position: relative;
+              text-decoration: none;
+              font-size: 14px;
+              color: #c2bfba;
+              margin-right: 15px;
+
+              &.socicon-youtube{
+                transform: translateY(2px);
+              }
+              &:hover{
+                color: lighten($brown, 5%);
+              }
+
+            }
+          }
+        }
+
+        &:hover, &.active{
+          .photo{
+            opacity: 0.12;
+          }
+          .content{
+            justify-content: center;
+
+            .dop{
+              display: block;
+              animation: from-bottom 0.3s ease-out;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
 
 
 
@@ -609,6 +754,16 @@ header{
   }
   to{
     top: 100%;
+  }
+}
+@keyframes from-bottom {
+  from{
+    transform: translateY(300px);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
