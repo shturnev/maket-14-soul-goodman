@@ -1,11 +1,11 @@
 @import url("https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?u8vidh");
 @import url("https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Oxygen:400,700|Raleway:400,700,900|Rufina:400,700");
-header .head-slider, header .row.row-1 ul.menu, header .slide-dots > ul, #services > .wr .row-2, #achivements .content ul, #practice-area > .wr ul, #testimonials ul, #attorneys > .wr > .team-list, #pricing > .wr > .price-list, #news ul {
+header .head-slider, header .row.row-1 .menu-cont ul.menu, header .slide-dots > ul, #services > .wr .row-2, #achivements .content ul, #practice-area > .wr ul, #testimonials ul, #attorneys > .wr > .team-list, #pricing > .wr > .price-list, #news ul {
   list-style: none;
   margin: 0;
   padding: 0; }
 
-.wr, header .row.row-1 ul.menu {
+.wr, header .row.row-1 .menu-cont ul.menu {
   max-width: 1170px;
   padding-left: 10px;
   padding-right: 10px;
@@ -86,7 +86,8 @@ header {
       display: none;
       cursor: pointer;
       position: relative;
-      top: 8px; }
+      top: 8px;
+      z-index: 1; }
       header .row.row-1 .menu-tymbler svg {
         width: 30px;
         height: 30px;
@@ -94,24 +95,56 @@ header {
       @media (max-width: 768px) {
         header .row.row-1 .menu-tymbler {
           display: block; } }
-    header .row.row-1 ul.menu {
+    header .row.row-1 .menu-cont .close {
+      display: none; }
+      @media (max-width: 768px) {
+        header .row.row-1 .menu-cont .close {
+          display: block;
+          position: absolute;
+          right: 35px;
+          top: 35px;
+          z-index: 1; }
+          header .row.row-1 .menu-cont .close svg {
+            width: 30px;
+            height: 30px;
+            fill: #a69069; } }
+    header .row.row-1 .menu-cont ul.menu {
       position: relative;
       display: flex;
       justify-content: center; }
-      header .row.row-1 ul.menu li {
+      header .row.row-1 .menu-cont ul.menu li {
         padding: 0 20.5px; }
-        header .row.row-1 ul.menu li a {
+        header .row.row-1 .menu-cont ul.menu li a {
           display: inline-block;
           color: white;
           font-weight: 700;
           text-decoration: none;
           border-bottom: 3px solid transparent;
           padding-bottom: 2px; }
-          header .row.row-1 ul.menu li a:hover, header .row.row-1 ul.menu li a.active {
+          header .row.row-1 .menu-cont ul.menu li a:hover, header .row.row-1 .menu-cont ul.menu li a.active {
             border-color: #a69069; }
       @media (max-width: 768px) {
-        header .row.row-1 ul.menu {
-          display: none; } }
+        header .row.row-1 .menu-cont ul.menu {
+          flex-direction: column;
+          align-items: center;
+          height: inherit; }
+          header .row.row-1 .menu-cont ul.menu li {
+            padding: 10px 0;
+            font-size: 20px; }
+            header .row.row-1 .menu-cont ul.menu li a {
+              color: #4a4d51; } }
+    @media (max-width: 768px) {
+      header .row.row-1 .menu-cont {
+        display: none; }
+        header .row.row-1 .menu-cont.open {
+          display: block;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: #ffffff;
+          z-index: 10; } }
     @media (max-width: 768px) {
       header .row.row-1 {
         display: flex;
@@ -128,6 +161,9 @@ header {
         font-family: "Rufina", serif;
         font-size: 60px;
         font-weight: 400; }
+        @media (max-width: 768px) {
+          header .row.row-2 .big-title {
+            font-size: 35px; } }
       header .row.row-2 .btn, header .row.row-2 footer > .wr .col-1 .submit input, footer > .wr .col-1 .submit header .row.row-2 input {
         color: white;
         margin-top: 42px; }
@@ -184,13 +220,17 @@ header {
         color: #a69069;
         border-color: #a69069;
         opacity: 1; }
+    @media (max-width: 768px) {
+      header .slide-dots {
+        display: none; } }
 
 #services {
   position: relative;
   padding: 85px 0; }
   #services > .wr > .row-1 {
     display: grid;
-    grid-template-columns: minmax(300px, 530px) auto;
+    grid-template-columns: minmax(100px, 530px) auto;
+    grid-gap: 30px;
     justify-content: space-between; }
     #services > .wr > .row-1 .col-1 {
       color: #333;
@@ -226,6 +266,9 @@ header {
         line-height: 20px;
         height: 60px;
         overflow: hidden; }
+    @media (max-width: 768px) {
+      #services > .wr .row-2 {
+        grid-template-columns: auto; } }
 
 #about {
   position: relative;
@@ -234,9 +277,12 @@ header {
   grid-gap: 10px;
   color: white; }
   #about .content {
-    padding: 65px 0;
+    padding: 65px 10px;
     box-sizing: border-box;
     max-width: 580px; }
+    @media (max-width: 768px) {
+      #about .content {
+        max-width: 100%; } }
   #about .col-1 {
     display: flex;
     justify-content: flex-end;
@@ -285,6 +331,9 @@ header {
           margin-left: 20px; }
         #about .col-2 .content .play:hover {
           opacity: 1; }
+  @media (max-width: 768px) {
+    #about {
+      grid-template-columns: auto; } }
 
 #achivements {
   padding: 90px 0; }
@@ -395,12 +444,21 @@ header {
             width: 10px;
             height: 10px;
             fill: white; }
+        @media (max-width: 768px) {
+          #practice-area > .wr ul li a .content {
+            flex-direction: column;
+            align-items: center; }
+            #practice-area > .wr ul li a .content .title {
+              margin-bottom: 10px; } }
       #practice-area > .wr ul li a:hover .photo, #practice-area > .wr ul li a.active .photo {
         filter: brightness(65%); }
       #practice-area > .wr ul li a:hover .arrow, #practice-area > .wr ul li a.active .arrow {
         background: white; }
         #practice-area > .wr ul li a:hover .arrow svg, #practice-area > .wr ul li a.active .arrow svg {
           fill: #a69069; }
+    @media (max-width: 768px) {
+      #practice-area > .wr ul {
+        grid-template-columns: repeat(2, 1fr); } }
 
 #testimonials {
   background: #4a5b74;
@@ -547,6 +605,9 @@ header {
           #attorneys > .wr > .team-list li:hover .content .dop, #attorneys > .wr > .team-list li.active .content .dop {
             display: block;
             animation: from-bottom 0.3s ease-out; }
+      @media (max-width: 768px) {
+        #attorneys > .wr > .team-list {
+          grid-template-columns: 1fr; } }
 
 #pricing {
   position: relative;
@@ -648,6 +709,9 @@ header {
           border-color: #a69069; }
           #pricing > .wr > .price-list li.active .sale-percent {
             background-color: #a69069; }
+      @media (max-width: 768px) {
+        #pricing > .wr > .price-list {
+          grid-template-columns: 1fr; } }
 
 #solutions {
   position: relative; }
@@ -786,6 +850,9 @@ header {
           color: white; }
       #news ul li:hover .photo svg, #news ul li.active .photo svg {
         opacity: 1; }
+    @media (max-width: 768px) {
+      #news ul {
+        grid-template-columns: 1fr; } }
 
 #partners {
   padding-bottom: 30px; }
@@ -883,6 +950,9 @@ footer {
           transform: translateY(2px); }
         footer > .wr .col-2 .social a:hover {
           color: #af9c79; }
+      @media (max-width: 768px) {
+        footer > .wr .col-2 .social {
+          justify-content: center; } }
     footer > .wr .col-2 .copy {
       color: #b3b3b3;
       font-size: 13px;
@@ -890,6 +960,12 @@ footer {
       line-height: 20px; }
       footer > .wr .col-2 .copy a {
         color: #a69069; }
+    @media (max-width: 768px) {
+      footer > .wr .col-2 {
+        text-align: center; } }
+    @media (max-width: 768px) {
+      footer > .wr {
+        grid-template-columns: 1fr; } }
 
 @keyframes for-line {
   from {

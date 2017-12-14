@@ -141,6 +141,7 @@ header{
         cursor: pointer;
         position: relative;
         top: 8px;
+        z-index: 1;
 
         svg{
           width: 30px;
@@ -152,32 +153,80 @@ header{
         }
 
       }
-      ul.menu{
-        @extend %ul, %wr;
-        position: relative;
-        display: flex;
-        justify-content: center;
+      .menu-cont{
 
-        li{
-          padding: 0 20.5px;
-          a{
-            display: inline-block;
-            color: white;
-            font-weight: 700;
-            text-decoration: none;
-            border-bottom: 3px solid transparent;
-            padding-bottom: 2px;
+        .close{
+          display: none;
 
-            &:hover, &.active{
-              border-color: $brown;
+          @include media(){
+            display:block;
+            position: absolute;
+            right: 35px;
+            top: 35px;
+            z-index: 1;
+
+            svg{
+              width: 30px;
+              height: 30px;
+              fill: $brown;
             }
           }
         }
+        ul.menu{
+          @extend %ul, %wr;
+          position: relative;
+          display: flex;
+          justify-content: center;
+
+          li{
+            padding: 0 20.5px;
+            a{
+              display: inline-block;
+              color: white;
+              font-weight: 700;
+              text-decoration: none;
+              border-bottom: 3px solid transparent;
+              padding-bottom: 2px;
+
+              &:hover, &.active{
+                border-color: $brown;
+              }
+            }
+          }
+          @include media(){
+            flex-direction: column;
+            align-items: center;
+            height: inherit;
+
+            li{
+              padding: 10px 0;
+              font-size: 20px;
+
+              a{
+                color: #4a4d51;
+              }
+            }
+
+          }
+        }
+
         @include media(){
           display: none;
+
+          &.open{
+            display:block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            z-index: 10;
+          }
         }
 
       }
+
 
       @include media(){
         display: flex;
@@ -197,6 +246,11 @@ header{
         font-family: map_get($fonts, 'rufina');
         font-size: 60px;
         font-weight: 400;
+
+        @include media(){
+          font-size: 35px;
+        }
+
       }
       .btn{
         color: white;
@@ -277,6 +331,10 @@ header{
         }
       }
     }
+    @include media(){
+      display: none;
+    }
+
   }
 }
 #services{
@@ -286,7 +344,8 @@ header{
   &>.wr{
     &>.row-1{
       display: grid;
-      grid-template-columns:  minmax(300px, 530px) auto;
+      grid-template-columns:  minmax(100px, 530px) auto;
+      grid-gap: 30px;
       justify-content: space-between;
 
       .col-1{
@@ -336,6 +395,10 @@ header{
           }
         }
       }
+      @include media(){
+        grid-template-columns:  auto;
+      }
+
     }
   }
 }
@@ -347,9 +410,15 @@ header{
   color: white;
 
   .content{
-    padding: 65px 0;
+    padding: 65px 10px;
     box-sizing: border-box;
     max-width: 580px;
+
+    @include media(){
+      max-width: 100%;
+    }
+
+
   }
   .col-1{
     display: flex;
@@ -417,6 +486,11 @@ header{
       }
     }
   }
+
+  @include media(){
+    grid-template-columns:  auto;
+  }
+
 }
 #achivements{
   padding: 90px 0;
@@ -567,6 +641,16 @@ header{
               }
             }
 
+            @include media(){
+              flex-direction: column;
+              align-items: center;
+
+              .title{
+                margin-bottom: 10px;
+              }
+            }
+
+
           }
           &:hover, &.active{
             .photo{
@@ -583,6 +667,11 @@ header{
         }
 
       }
+
+      @include media(){
+        grid-template-columns: repeat(2, 1fr);
+      }
+
     }
   }
 }
@@ -791,7 +880,10 @@ header{
           }
         }
       }
+      @include media(){
+        grid-template-columns: 1fr;
 
+      }
     }
   }
 }
@@ -928,6 +1020,11 @@ header{
 
 
       }
+      @include media(){
+        grid-template-columns: 1fr;
+
+      }
+
     }
   }
 }
@@ -1115,6 +1212,11 @@ header{
           opacity: 1;}
       }
     }
+    @include media(){
+      grid-template-columns: 1fr;
+
+    }
+
   }
 }
 #partners{
@@ -1238,7 +1340,6 @@ footer{
         .bottom{
           align-self: flex-end;
         }
-
         a{
           display:block;
           position: relative;
@@ -1255,6 +1356,10 @@ footer{
           }
 
         }
+        @include media(){
+          justify-content: center;
+        }
+
       }
       .copy{
         color: #b3b3b3;
@@ -1266,6 +1371,17 @@ footer{
           color: $brown;
         }
       }
+
+      @include media(){
+        text-align: center;
+
+      }
+
+
+    }
+
+    @include media(){
+      grid-template-columns: 1fr;
 
     }
   }
