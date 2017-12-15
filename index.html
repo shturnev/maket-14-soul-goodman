@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8"/>
-  <title>Сборка макета. Лучше звоните Соллу!</title>
+  <title>Сборка макета. Лучше звоните Соллу! Better call Saul!</title>
   <link rel="shortcut icon" href=""/>
   <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
   <link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<header>
+<header id="header">
   <ul class="head-slider">
     <li style="background-image:url(img/bg-11.jpg);"></li>
     <li style="background-image:url(img/bg-1.jpg);"></li>
@@ -38,15 +38,15 @@
     <div class="menu-cont" data-js="menu">
       <div class="close" data-js="menu-tymbler"><svg><use xlink:href="#cancel" /></svg></div>
       <ul class="menu">
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Practice Area</a></li>
-        <li><a href="#">Testimonials</a></li>
-        <li><a href="#">Attorneys Team</a></li>
-        <li><a href="#">Pricing Tables</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contacts</a></li>
+        <li><a href="#header" class="active">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#practice-area">Practice Area</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#attorneys">Attorneys Team</a></li>
+        <li><a href="#pricing">Pricing Tables</a></li>
+        <li><a href="#news">Blog</a></li>
+        <li><a href="#footer">Contacts</a></li>
       </ul>
     </div>
   </div>
@@ -512,7 +512,7 @@
     <a href="#"><img src="img/partner-8.jpg" alt=""></a>
   </div>
 </section>
-<footer>
+<footer id="footer">
   <div class="wr">
     <div class="col-1">
       <div class="title">How to Reach Us</div>
@@ -595,7 +595,6 @@
     $('[data-js="menu-tymbler"]').on("click", function () {
         menuTymbler()
     });
-
     function menuTymbler() {
         var menu = $('[data-js="menu"]');
 
@@ -608,6 +607,20 @@
         {
             $(menu).addClass('open').animateCss('bounceIn');
         }
+    }
+
+    //tabs
+    $(".tab").on("click", function () {
+        tabs(this);
+        return false;
+    });
+    function tabs(el) {
+        var target = $(el).attr('href');
+
+        $(".tab-item").hide();
+        $(".tab").removeClass('active');
+        $(el).toggleClass('active');
+        $(target).show();
     }
 
 </script>
