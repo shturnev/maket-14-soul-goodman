@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8"/>
-  <title>Сборка макета. Лучше звоните Соллу!</title>
+  <title>Сборка макета. Лучше звоните Соллу! Better call Saul!</title>
   <link rel="shortcut icon" href=""/>
   <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
   <link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
@@ -595,7 +595,6 @@
     $('[data-js="menu-tymbler"]').on("click", function () {
         menuTymbler()
     });
-
     function menuTymbler() {
         var menu = $('[data-js="menu"]');
 
@@ -608,6 +607,20 @@
         {
             $(menu).addClass('open').animateCss('bounceIn');
         }
+    }
+
+    //tabs
+    $(".tab").on("click", function () {
+        tabs(this);
+        return false;
+    });
+    function tabs(el) {
+        var target = $(el).attr('href');
+
+        $(".tab-item").hide();
+        $(".tab").removeClass('active');
+        $(el).toggleClass('active');
+        $(target).show();
     }
 
 </script>
