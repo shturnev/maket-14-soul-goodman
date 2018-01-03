@@ -12,3 +12,43 @@ $fonts: (
 
 //colors
 $brown: #a69069;
+
+%ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+html,body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100%;
+  font-size: 14px;
+}
+
+//--
+header{
+  position: relative;
+  min-height: 100vh;
+  background: yellow;
+
+  ul.slider-cont{
+    @extend %ul;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%; width: 100%;
+
+    li{
+      height: inherit;
+      background: no-repeat center top;
+    }
+  }
+  .row-1{
+
+  }
+
+}
