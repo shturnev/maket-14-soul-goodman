@@ -1,4 +1,29 @@
 @import url("https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?u8vidh");
 @import url("https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Oxygen:400,700|Raleway:400,700,900|Rufina:400,700");
+header ul.slider-cont {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100%;
+  font-size: 14px; }
+
+header {
+  position: relative;
+  min-height: 100vh;
+  background: yellow; }
+  header ul.slider-cont {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%; }
+    header ul.slider-cont li {
+      height: inherit;
+      background: no-repeat center top; }
 
 /*# sourceMappingURL=style.css.map */
