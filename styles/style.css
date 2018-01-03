@@ -1,6 +1,6 @@
 @import url("https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?u8vidh");
 @import url("https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Oxygen:400,700|Raleway:400,700,900|Rufina:400,700");
-header ul.slider-cont, header .row-1 ul.menu, #services ul.row-2 {
+header ul.slider-cont, header .row-1 ul.menu, #services ul.row-2, #achivements > .wr > .items, #practice > .wr .items, #testimonials > .wr ul.slider {
   list-style: none;
   margin: 0;
   padding: 0; }
@@ -24,6 +24,7 @@ header ul.slider-cont, header .row-1 ul.menu, #services ul.row-2 {
     background-color: #a69069; }
 
 .btn-content {
+  display: inline-block;
   font-family: "Oxygen", sans-serif;
   color: #484848;
   font-size: 14px;
@@ -171,6 +172,235 @@ header {
         line-height: 20px;
         max-height: 55px;
         overflow: hidden; }
+
+#about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px; }
+  #about .content {
+    max-width: 580px;
+    box-sizing: border-box; }
+  #about .col-1 {
+    display: flex;
+    justify-content: flex-end;
+    background: #a69069; }
+    #about .col-1 .content {
+      padding: 60px 50px 60px 0; }
+      #about .col-1 .content .title {
+        color: white;
+        font-family: "Rufina", serif;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 40px; }
+      #about .col-1 .content .descr {
+        color: white;
+        font-family: "Oxygen", sans-serif;
+        font-size: 13px;
+        line-height: 20px; }
+      #about .col-1 .content .for-btn {
+        margin-top: 25px; }
+        #about .col-1 .content .for-btn .btn-content {
+          border-color: white;
+          color: white; }
+          #about .col-1 .content .for-btn .btn-content:hover {
+            background: white;
+            color: #a69069; }
+  #about .col-2 {
+    display: grid;
+    background: #4a5b74;
+    align-items: center; }
+    #about .col-2 .content {
+      display: flex;
+      justify-content: center; }
+      #about .col-2 .content a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: "Oxygen", sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 40px;
+        text-decoration: none; }
+        #about .col-2 .content a:after {
+          content: '';
+          display: block;
+          width: 57px;
+          height: 74px;
+          background: url("../img/play.png");
+          margin-left: 20px;
+          opacity: 0.7;
+          transition: all 0.3s ease; }
+        #about .col-2 .content a:hover:after {
+          opacity: 1; }
+
+#achivements {
+  padding: 105px 0 90px;
+  border-bottom: 1px solid #f0f0f0; }
+  #achivements > .wr {
+    position: relative;
+    border: 5px solid #a69069;
+    box-sizing: border-box; }
+    #achivements > .wr > .title {
+      position: absolute;
+      color: #333;
+      font-family: "Rufina", serif;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 40px;
+      left: 0;
+      right: 0;
+      top: -23px;
+      text-align: center; }
+      #achivements > .wr > .title span {
+        display: inline-block;
+        background: white;
+        padding: 0 30px; }
+    #achivements > .wr > .items {
+      display: flex;
+      justify-content: space-around;
+      padding-top: 50px; }
+      #achivements > .wr > .items li {
+        margin-bottom: 50px; }
+        #achivements > .wr > .items li .num {
+          color: #a69069;
+          font-family: "Oxygen", sans-serif;
+          font-size: 60px;
+          font-weight: 700;
+          line-height: 1; }
+        #achivements > .wr > .items li .text {
+          color: #444;
+          font-family: "Rufina", serif;
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 1.6; }
+
+#practice {
+  padding: 75px 0 105px 0; }
+  #practice > .wr > .title {
+    color: #333;
+    font-family: "Rufina", serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 25px; }
+  #practice > .wr .row-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; }
+    #practice > .wr .row-1 .descr {
+      color: #9b9b9b;
+      font-family: "Rufina", serif;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 23px;
+      margin-right: 75px; }
+  #practice > .wr .items {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); }
+    #practice > .wr .items li a {
+      display: block;
+      position: relative;
+      padding-top: 100%; }
+      #practice > .wr .items li a .for-img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: no-repeat center / cover;
+        filter: grayscale(100%) brightness(50%);
+        transition: all 0.3s ease; }
+      #practice > .wr .items li a .content {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: none;
+        transition: all 0.5s ease; }
+        #practice > .wr .items li a .content .title {
+          color: white;
+          font-family: "Rufina", serif;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 20px; }
+        #practice > .wr .items li a .content .arrow {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          border: 1px solid white;
+          transition: all 0.3s ease; }
+          #practice > .wr .items li a .content .arrow svg {
+            width: 10px;
+            height: 10px;
+            fill: white;
+            transition: all 0.3s ease; }
+      #practice > .wr .items li a:hover .for-img, #practice > .wr .items li a.active .for-img {
+        filter: grayscale(0) brightness(90%); }
+      #practice > .wr .items li a:hover .content, #practice > .wr .items li a.active .content {
+        background: linear-gradient(to top, #1b1b1b, transparent); }
+        #practice > .wr .items li a:hover .content .arrow, #practice > .wr .items li a.active .content .arrow {
+          background-color: #fff; }
+          #practice > .wr .items li a:hover .content .arrow svg, #practice > .wr .items li a.active .content .arrow svg {
+            fill: #a69069; }
+
+#testimonials {
+  background: #4a5b74;
+  padding: 70px 0; }
+  #testimonials > .wr ul.slider li {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    #testimonials > .wr ul.slider li .quotes {
+      width: 30px;
+      height: 22px;
+      background: url("../img/qoutes.png");
+      margin-bottom: 30px; }
+    #testimonials > .wr ul.slider li .text {
+      color: white;
+      font-family: "Oxygen", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      text-align: center;
+      max-width: 960px;
+      margin-bottom: 35px; }
+    #testimonials > .wr ul.slider li .stars {
+      display: flex;
+      font-size: 26px;
+      margin-bottom: 35px; }
+      #testimonials > .wr ul.slider li .stars span {
+        margin: 0 -1px;
+        color: #828e9e; }
+        #testimonials > .wr ul.slider li .stars span.active {
+          color: #a69069; }
+    #testimonials > .wr ul.slider li .photo {
+      margin-bottom: 20px; }
+      #testimonials > .wr ul.slider li .photo img {
+        width: 83px;
+        height: 83px;
+        object-fit: cover;
+        border-radius: 50%; }
+    #testimonials > .wr ul.slider li .name {
+      font-family: "Rufina", serif;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 20px;
+      color: white; }
+    #testimonials > .wr ul.slider li .speciality {
+      font-family: "Oxygen", sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 18px;
+      color: white; }
 
 @keyframes v-line {
   from {
