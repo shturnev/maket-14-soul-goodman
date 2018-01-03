@@ -18,7 +18,46 @@ $brown: #a69069;
   margin: 0;
   padding: 0;
 }
+%wr{
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
 
+.btn-head{
+  color: white;
+  font-family: map_get($fonts, 'oxygen');
+  font-size: 12px;
+  font-weight: 700;
+  //text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid $brown;
+  border-radius: 30px;
+  padding: 16px 44px;
+  transition: all 0.3s ease;
+
+  &:hover{
+    background-color: $brown;
+  }
+}
+.btn-content{
+  font-family: map_get($fonts, 'oxygen');
+  color: #484848;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid $brown;
+  border-radius: 30px;
+  padding: 15px 52px;
+  transition: all 0.3s ease;
+
+  &:hover{
+    background-color: $brown;
+  }
+}
+.wr{
+  @extend %wr;
+}
 
 html,body{
   margin: 0;
@@ -30,6 +69,10 @@ html,body{
 
 //--
 header{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
   min-height: 100vh;
   background: yellow;
@@ -44,11 +87,173 @@ header{
 
     li{
       height: inherit;
-      background: no-repeat center top;
+      background: no-repeat center top / cover;
     }
   }
   .row-1{
+    @extend %wr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    a.logo{
+      display:block;
+      font-family: map_get($fonts, 'dancing');
+      font-size: 45px;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      line-height: 1;
+      padding: 50px 0 0 0;
+
+      .brown{
+        color: $brown;
+      }
+      .small{
+        display:block;
+        color: #acacac;
+        font-family: map_get($fonts, 'oxygen');
+        font-size: 9px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+      }
+
+
+
+    }
+    ul.menu{
+      @extend %ul;
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+
+      li{
+        margin: 0 20px;
+
+        a{
+          display: inline-block;
+          color: white;
+          font-family: map_get($fonts, 'oxygen');
+          font-size: 14px;
+          font-weight: 700;
+          text-decoration: none;
+          border-bottom: 3px solid transparent;
+          padding-bottom: 4px;
+          
+          &:hover, &.active{
+            border-color: $brown;
+          }
+
+        }
+      }
+    }
+  }
+
+  .row-2{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+    min-height: 55vh;
+
+    .title{
+      color: white;
+      font-family: map_get($fonts, 'rufina');
+      font-size: 60px;
+      font-weight: 400;
+      margin-bottom: 45px;
+    }
+    .v-line{
+      position:relative;
+      width: 2px;
+      flex: 1;
+      margin: 40px 0 30px 0;
+      overflow: hidden;
+
+      &:before{
+        content: '';
+        display:block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(white, 0.15);
+        animation: v-line 3s ease-out infinite;
+      }
+    }
+    .mouse{
+      width: 22px;
+      height: 32px;
+      background: no-repeat url("../img/mouse.png");
+    }
+
 
   }
 
+}
+#services{
+  padding: 70px 0 90px 0;
+
+  .row-1{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .title{
+      color: #333;
+      font-family: map_get($fonts, 'rufina');
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 35px;
+      max-width: 535px;
+    }
+    .btn{
+
+    }
+  }
+  ul.row-2{
+    @extend %ul;
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 55px 20px ;
+
+    li{
+      a{
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-gap: 30px;
+        text-decoration: none;
+
+        .title{
+          color: #333;
+          font-family: map_get($fonts, 'rufina');
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 1;
+          margin-bottom: 10px;
+        }
+        .descr{
+          color: #555;
+          font-family: map_get($fonts, 'oxygen');
+          font-size: 13px;
+          font-weight: 400;
+          line-height: 20px;
+          max-height: 55px;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+
+@keyframes v-line {
+  from{
+    top: -100%;
+  }
+  to{
+    top: 100%;
+  }
 }
